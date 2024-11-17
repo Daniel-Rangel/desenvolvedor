@@ -1,0 +1,56 @@
+// filtro por orden
+
+.filter-bar{
+  display: flex;
+  justify-content: space-between;
+  margin-top: 40px;
+
+  @media screen and (max-width: 1024px) {
+    padding: 0 16px;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 24px;
+  }
+
+  &__filter,
+  &__sort{
+    width: 100%;
+    display: block;
+    font-size: 1.5rem;
+    border: 1px solid #666666;
+    background-color: #fff;
+    color: #666666;
+    flex: 1;
+    cursor: pointer;
+    padding: 8px;
+  }
+
+  &__title{
+    font-size: 32px;
+    line-height: 43.58px;
+    font-weight: 400;
+  }
+
+  &__select{
+    width: 142px;
+    height: 42px;
+    padding: 0 10px;
+    border: 1px solid #00000080;
+  }
+
+  &__option{
+    border-radius: 0;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 21.79px;
+
+    &:checked {
+      background-color: #FB953E;
+      color: #fff;
+    }
+
+    &:hover {
+      background-color: #FB953E;
+    }
+  }
+}

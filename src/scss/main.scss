@@ -1,1 +1,41 @@
 @import "reset";
+@import "header";
+@import "filtros";
+@import "aside";
+@import "product-list";
+
+body{
+  font-family: "Open-Sans";
+  font-size: 16px;
+  color: #000000;
+  line-height: 21.79px;
+}
+
+.wrapper{
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.content{
+  width: 100%;
+  max-width: 1176px;
+  margin: 0 auto;
+  flex: 1;
+}
+
+p{
+  font-size: 16px;
+  color: #000000;
+  line-height: 21.79px;
+}
+
+footer{
+  background-color: #000000;
+  color: #fff;
+
+  p{
+    color: #fff;
+    text-align: center;
+  }
+}

@@ -1,0 +1,109 @@
+/* Estilo da lista de produtos */
+.product-list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(195px, 1fr));
+  gap: 2.625rem 4.015625rem;
+  margin: 0 auto;
+  text-align: center; 
+
+  @media screen and (max-width: 1024px) {
+    grid-template-columns: repeat(2, minmax(162px, 1fr));
+    gap: 18px;
+    padding: 0 16px;
+  }
+}
+
+/* Estilo do cartão do produto */
+.product {
+
+  &-card{
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    background-color: #fff;
+  
+    /* Imagem do produto */
+    &__image{
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+    }
+
+    /* Detalhes do produto */
+    &__details {
+      padding: 1rem 0 0;
+      text-align: center;
+    }
+
+    &__title {
+      text-transform: uppercase;
+      font-size: .875rem;
+      margin-bottom: 0.625rem;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    &__price {
+      font-size: 1rem;
+      font-weight: bold;
+      line-height: 21.79px;
+      color: #000000;
+    }
+
+    &__installments {
+      display: block;
+      font-size: 1rem;
+      color: #666666;
+      line-height: 21.79px;
+    }
+    
+    /* Botão de compra */
+    &__button {
+      padding: 0.5rem 1rem;
+      font-size: .875rem;
+      color: #fff;
+      background-color: #000000;
+      border: none;
+      cursor: pointer;
+      transition: background-color 0.3s;
+      margin-top: .875rem;
+
+      &:hover {
+        background-color: #000000dd;
+      }
+    }
+  }
+}
+
+.load-more-container{
+  grid-column: 1 / -1;
+  display: flex;
+  justify-content: center; 
+  margin-bottom: 2.1875rem;
+}
+
+.load-more{
+  padding: 0.5rem 1rem;
+  font-size: .875rem;
+  color: #fff;
+  background-color: #FB953E;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-top: 4.375rem ;
+
+  @media screen and (max-width: 1024px) {
+    margin-top: .875rem;
+  }
+
+  &:hover {
+    background-color: #FB953Edd;
+  }
+}
+
+
+.load-more.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}

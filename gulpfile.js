@@ -16,10 +16,13 @@ const paths = {
     watch: "src/ts/**/*.ts",
   },
   styles: {
-    src: "src/scss/main.scss",
-  },
+    src: "src/scss/**/*.scss", 
+  },  
   img: {
-    src: "src/img/**/*",
+    src: "src/assets/img/**/*",
+  },
+  svg: {
+    src: "src/assets/svg/**/*",
   },
   html: {
     src: "src/index.html",
@@ -83,23 +86,27 @@ function html() {
 }
 
 function img() {
-  return src(paths.img.src).pipe(dest(paths.dest + "/img"));
+  return src(paths.img.src).pipe(dest(paths.dest + "/assets/img"));
 }
 
+function svg() {
+  return src(paths.svg.src).pipe(dest(paths.dest + "/assets/svg"));
+}
+
+
 const build = series(clean, parallel(styles, scripts, html, img));
+const chokidar = require("chokidar");
+
 const dev = () => {
-  watch(paths.scripts.watch, { ignoreInitial: false }, scripts).on(
-    "change",
-    browserSync.reload
-  );
-  watch(paths.styles.src, { ignoreInitial: false }, styles);
-  watch(paths.img.src, { ignoreInitial: false }, img);
-  watch(paths.html.src, { ignoreInitial: false }, html).on(
-    "change",
-    browserSync.reload
-  );
+  chokidar.watch(paths.scripts.watch).on("all", scripts);
+  chokidar.watch(paths.styles.src).on("all", styles);
+  chokidar.watch(paths.img.src).on("all", img);
+  chokidar.watch(paths.svg.src).on("all", svg);
+  chokidar.watch(paths.html.src).on("all", html).on("change", browserSync.reload);
+
   server();
 };
+
 
 exports.build = build;
 exports.server = server;

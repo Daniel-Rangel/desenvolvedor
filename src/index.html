@@ -1,19 +1,124 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Desenvolvedor Cadastra</title>
-  <link rel="stylesheet" href="main.css" />
-</head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
 
-<body>
+    <title>Desenvolvedor Cadastra</title>
+    <link rel="stylesheet" href="main.css" />
+  </head>
 
-</body>
-<h1>Desafio Cadastra</h1>
+  <body>
+    <div class="wrapper">
+      <header class="header">
+        <div class="content header__content">
+            <img class="header__logo" src="assets/svg/logo.svg" alt="Logo cadastra" />
+            <div class="header__content-cart">
+              <img class="header__cart" src="assets/svg/cart.svg" alt="Imagem de sacola" />
+              <span class="header__bullet">1</span>
+            </div>
+        </div>
+      </header>
+      <main class="content">
+        <header class="filter-bar">
+          <h1 class="filter-bar__title">Blusas</h1>
 
-<script src="bundle.js"></script>
+          <div class="filter-bar__buttons">
+            <button class="filter-bar__filter">Filtrar</button>
+            <button class="filter-bar__sort">Ordenar</button>
+          </div>
 
+          <select class="filter-bar__select" id="Ordenar">
+            <option class="filter-bar__option" value="Ordenar por">Ordenar por: </option>
+            <option class="filter-bar__option" value="Mas recentes">Mas recentes</option>
+            <option class="filter-bar__option" value="Menor preço">Menor preço</option>
+            <option class="filter-bar__option" value="Maior preço" selected>Maior preço</option>
+          </select>
+
+        </header>
+        <section class="products-container">
+          <aside class="filters-sidebar">
+            <div class="filter-group">
+              <h3 class="filter-group__title">Cores</h3>
+              <div class="filter-options">
+                <label class="filter-label">
+                  <input type="checkbox" name="Amarelo" id="cor" class="filter-input">
+                  <span class="filter-text">Amarelo</span>
+                </label>
+                <label class="filter-label">
+                  <input type="checkbox" name="azul" id="cor" class="filter-input">
+                  <span class="filter-text">Azul</span>
+                </label>
+                <label class="filter-label">
+                  <input type="checkbox" name="branco" id="cor" class="filter-input">
+                  <span class="filter-text">Branco</span>
+                </label>
+              </div>
+            </div>
+        
+            <div class="filter-group">
+              <h3 class="filter-group__title">Tamanhos</h3>
+              <div class="filter-options  filter-options__tamanho">
+                <label class="filter-label__tamanho">
+                  <input type="checkbox" name="p" id="tamanho" class="filter-input filter-input__tamanho">
+                  <span class="filter-text filter-text__tamanho">P</span>
+                </label>
+                <label class="filter-label__tamanho">
+                  <input type="checkbox" name="m" id="tamanho" class="filter-input filter-input__tamanho">
+                  <span class="filter-text filter-text__tamanho">M</span>
+                </label>
+                <label class="filter-label__tamanho">
+                  <input type="checkbox" name="g" id="tamanho" class="filter-input filter-input__tamanho">
+                  <span class="filter-text filter-text__tamanho">G</span>
+                </label>
+                <label class="filter-label__tamanho">
+                  <input type="checkbox" name="36" id="tamanho" class="filter-input filter-input__tamanho">
+                  <span class="filter-text filter-text__tamanho">36</span>
+                </label>
+              </div>
+            </div>
+        
+            <div class="filter-group">
+              <h3 class="filter-group__title">Faixa de preço</h3>
+              <div class="filter-options">
+                <label class="filter-label">
+                  <input type="checkbox" name="50" id="preco" class="filter-input">
+                  <span class="filter-text">De 0 até 50</span>
+                </label>
+                <label class="filter-label">
+                  <input type="checkbox" name="150" id="preco" class="filter-input">
+                  <span class="filter-text">De 51 até 150</span>
+                </label>
+                <label class="filter-label">
+                  <input type="checkbox" name="350" id="preco" class="filter-input">
+                  <span class="filter-text">De 151 até 350</span>
+                </label>
+                <label class="filter-label">
+                  <input type="checkbox" name="500" id="preco" class="filter-input">
+                  <span class="filter-text">De 351 até 500</span>
+                </label>
+              </div>
+            </div>
+          </aside>
+
+          <div class="products-content">
+            <section id="product-list" class="product-list"></section>
+            <div class="load-more-container">
+              <button class="load-more"  disabled="true">Carregar mais</button>
+            </div>
+          </div>
+        </section>        
+      </main>
+      <footer>
+        <p>CADASTRA: Implantação de E-commerce VTEX</p>
+      </footer>
+    </div>
+
+    <script src="bundle.js"></script>
+  </body>
 </html>
